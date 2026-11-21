@@ -1,17 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CR">
-  <rect width="64" height="64" rx="14" fill="#0F233C" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Carlos Rocha — CR">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F233C" />
+      <stop offset="100%" stop-color="#173459" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)" />
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#60A5FA" stroke-opacity="0.28" stroke-width="1.5" />
+  <!-- Letra C em azul técnico (#60A5FA) -->
   <path
-    d="M17 20h14M17 32h10M17 44h14"
+    d="M28 21.5A11.5 11.5 0 1 0 28 42.5"
+    fill="none"
     stroke="#60A5FA"
-    stroke-width="4"
+    stroke-width="5.5"
     stroke-linecap="round"
   />
+  <!-- Letra R em branco (#FFFFFF) -->
   <path
-    d="M35 20h7a7 7 0 0 1 0 14h-7V20Zm7 14 7 10"
+    d="M35 43V21h8.5a6.5 6.5 0 0 1 0 13H35m7.5 0L50 43"
     fill="none"
     stroke="#FFFFFF"
-    stroke-width="4"
+    stroke-width="5.5"
     stroke-linecap="round"
     stroke-linejoin="round"
   />
+  <!-- Ponto de conexão (IA / Automação) -->
+  <circle cx="53.5" cy="14.5" r="3" fill="#38BDF8" />
 </svg>
