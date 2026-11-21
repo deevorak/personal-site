@@ -1,0 +1,121 @@
+<section class="section-padding section-subtle border-top" aria-labelledby="tech-stack-heading">
+  <div class="container">
+    <div class="row justify-content-between align-items-end g-3 mb-5">
+      <div class="col-lg-8">
+        <span class="section-eyebrow mb-3">
+          <i class="bi bi-stack" aria-hidden="true"></i>
+          <span>Tecnologias &amp; Arquitetura</span>
+        </span>
+        <h2 id="tech-stack-heading" class="section-title mb-3">
+          Soluções construídas com tecnologias consolidadas de mercado
+        </h2>
+        <p class="section-lead mb-0">
+          Por trás de uma operação simples para a sua equipe, utilizo ferramentas adotadas por
+          grandes ambientes corporativos — escolhidas para entregar segurança, velocidade e
+          liberdade de evolução sem aprisionar o seu negócio.
+        </p>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-lg-2 g-4">
+      @for (category of categories; track category.title) {
+        <div class="col">
+          <article class="card tech-pillar-card h-100 border-0">
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between gap-3 mb-3">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="tech-pillar-icon" aria-hidden="true">
+                    <i class="bi" [class]="category.icon"></i>
+                  </span>
+                  <div>
+                    <h3 class="h5 fw-bold mb-1">{{ category.title }}</h3>
+                    <p class="small text-muted mb-0">{{ category.subtitle }}</p>
+                  </div>
+                </div>
+                <span class="tech-pillar-badge d-none d-sm-inline-flex">{{ category.badge }}</span>
+              </div>
+
+              <ul class="list-unstyled d-flex flex-column gap-3 mb-0 mt-2">
+                @for (tech of category.items; track tech.name) {
+                  <li class="tech-item-row rounded-3 p-3">
+                    <div class="d-flex align-items-start gap-3">
+                      <span class="tech-logo-box" aria-hidden="true">
+                        <img
+                          [src]="tech.iconUrl"
+                          alt=""
+                          width="24"
+                          height="24"
+                          decoding="async"
+                          class="tech-logo-img"
+                        />
+                      </span>
+
+                      <div class="flex-grow-1 min-w-0">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-1">
+                          <span class="fw-bold text-dark">{{ tech.name }}</span>
+
+                          @if (tech.secondaryIconUrls?.length) {
+                            <span class="d-inline-flex align-items-center gap-1" aria-hidden="true">
+                              @for (secUrl of tech.secondaryIconUrls; track secUrl) {
+                                <span class="tech-logo-mini">
+                                  <img
+                                    [src]="secUrl"
+                                    alt=""
+                                    width="16"
+                                    height="16"
+                                    decoding="async"
+                                    class="tech-logo-img"
+                                  />
+                                </span>
+                              }
+                            </span>
+                          }
+                        </div>
+                        <p class="small text-secondary mb-0">{{ tech.role }}</p>
+                      </div>
+                    </div>
+                  </li>
+                }
+              </ul>
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+
+    <div class="stack-summary-bar rounded-4 p-4 mt-4">
+      <div class="row align-items-center g-3">
+        <div class="col-lg-5">
+          <h3 class="h6 fw-bold mb-1">Ecossistema completo e dimensionamento consciente</h3>
+          <p class="small text-secondary mb-0">
+            Cada projeto recebe apenas a complexidade necessária — desde uma <strong>VPS</strong>
+            enxuta com <strong>Docker</strong> até arquiteturas distribuídas com
+            <strong>Kubernetes</strong>, mensageria e IA, dentre outras ferramentas.
+          </p>
+        </div>
+        <div class="col-lg-7">
+          <div class="d-flex flex-wrap gap-2">
+            @for (chip of stackHighlights; track chip.name) {
+              <span class="stack-tag font-mono-label">
+                @if (chip.iconUrl) {
+                  <img
+                    [src]="chip.iconUrl"
+                    alt=""
+                    width="16"
+                    height="16"
+                    decoding="async"
+                    class="stack-tag-icon"
+                    aria-hidden="true"
+                  />
+                } @else if (chip.biIcon) {
+                  <i class="bi text-primary" [class]="chip.biIcon" aria-hidden="true"></i>
+                }
+                <span>{{ chip.name }}</span>
+              </span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

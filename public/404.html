@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecionando...</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      // Redireciona rotas diretas no GitHub Pages mantendo compatibilidade com roteamento hash
+      (function () {
+        var pathSegmentsToKeep = 1;
+        var l = window.location;
+        var basePath = l.pathname
+          .split('/')
+          .slice(0, 1 + pathSegmentsToKeep)
+          .join('/');
+        var redirectTarget = l.origin + basePath + '/#/';
+        l.replace(redirectTarget);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecionando para a página inicial...</p>
+  </body>
+</html>

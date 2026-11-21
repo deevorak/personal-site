@@ -1,0 +1,93 @@
+.hero-section {
+  padding-block: 3.5rem 4.25rem;
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-canvas) 100%);
+  border-bottom: 1px solid var(--border-subtle);
+
+  @media (min-width: 992px) {
+    padding-block: 5rem 5.5rem;
+  }
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4375rem 0.9375rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-strong);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.14;
+  color: var(--ink-primary);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.03rem, 1.35vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--ink-secondary);
+  max-width: 60ch;
+}
+
+.hero-trust-row {
+  border-color: var(--border-subtle) !important;
+}
+
+.hero-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.hero-metric-value {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink-primary);
+}
+
+.hero-metric-label {
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+  line-height: 1.4;
+}
+
+.hero-panel {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-lg);
+}
+
+.panel-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-whatsapp);
+  background-color: var(--accent-whatsapp-soft);
+}
+
+.flow-card {
+  background-color: var(--bg-canvas);
+  border: 1px solid var(--border-subtle);
+}
+
+.flow-icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.375rem;
+  height: 2.375rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}

@@ -1,0 +1,135 @@
+<footer class="site-footer py-5">
+  <div class="container">
+    <div class="row g-4 pb-4 border-bottom border-white border-opacity-10">
+      <div class="col-lg-5">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span class="footer-monogram" aria-hidden="true">CR</span>
+          <div>
+            <h2 class="h6 text-white fw-bold mb-0">{{ contactService.ownerName }}</h2>
+            <p class="footer-muted small mb-0">{{ contactService.ownerRole }}</p>
+          </div>
+        </div>
+        <p class="footer-text small mb-3">
+          Atuação independente como profissional autônomo (pessoa física, sem CNPJ), aplicando mais
+          de 20 anos de experiência corporativa e vivência em sistemas de atendimento ao cidadão para
+          estruturar agentes de IA, sites corporativos, automações e sistemas sob medida para pequenas
+          e médias empresas de qualquer segmento.
+        </p>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <h3 class="h6 text-white fw-semibold mb-3">Navegação</h3>
+        <ul class="list-unstyled d-flex flex-column gap-2 small mb-0">
+          <li>
+            <a class="footer-link" href="#solucoes" (click)="navigateTo('solucoes', $event)">
+              Soluções e frentes de trabalho
+            </a>
+          </li>
+          <li>
+            <a
+              class="footer-link"
+              href="#por-que-trabalhar"
+              (click)="navigateTo('por-que-trabalhar', $event)"
+            >
+              Por que trabalhar comigo
+            </a>
+          </li>
+          <li>
+            <a
+              class="footer-link"
+              href="#tecnologias"
+              (click)="navigateTo('tecnologias', $event)"
+            >
+              Tecnologias e stack
+            </a>
+          </li>
+          <li>
+            <a
+              class="footer-link"
+              href="#como-funciona"
+              (click)="navigateTo('como-funciona', $event)"
+            >
+              Como funciona o projeto
+            </a>
+          </li>
+          <li>
+            <a class="footer-link" href="#faq" (click)="navigateTo('faq', $event)">
+              Perguntas frequentes
+            </a>
+          </li>
+          <li>
+            <a class="footer-link" href="#contato" (click)="navigateTo('contato', $event)">
+              Contato direto
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <h3 class="h6 text-white fw-semibold mb-3">Canais diretos</h3>
+        <ul class="list-unstyled d-flex flex-column gap-3 small mb-0">
+          <li class="d-flex align-items-center gap-2">
+            <i class="bi bi-whatsapp text-success fs-6" aria-hidden="true"></i>
+            <a
+              class="footer-link fw-medium"
+              [href]="contactService.whatsappUrl()"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ contactService.whatsappDisplay }}
+            </a>
+          </li>
+          <li class="d-flex flex-wrap align-items-center gap-2">
+            <i class="bi bi-envelope text-info fs-6" aria-hidden="true"></i>
+            <a class="footer-link fw-medium" [href]="contactService.emailHref">
+              {{ contactService.email }}
+            </a>
+
+            <span class="copy-action-wrapper">
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-light copy-btn px-2 py-1 d-inline-flex align-items-center gap-1"
+                [attr.data-copied]="contactService.emailCopyState() === 'copied' ? 'true' : null"
+                [attr.data-failed]="contactService.emailCopyState() === 'failed' ? 'true' : null"
+                [attr.aria-label]="'Copiar e-mail ' + contactService.email"
+                (click)="contactService.copyEmail()"
+              >
+                <i
+                  class="bi"
+                  [class.bi-clipboard]="contactService.emailCopyState() === 'idle'"
+                  [class.bi-check2]="contactService.emailCopyState() === 'copied'"
+                  [class.bi-exclamation-circle]="contactService.emailCopyState() === 'failed'"
+                  aria-hidden="true"
+                ></i>
+                <span class="small">{{ contactService.emailCopyState() === 'copied' ? 'Copiado' : 'Copiar' }}</span>
+              </button>
+              <span
+                class="copy-feedback-bubble"
+                role="status"
+                [attr.data-visible]="contactService.emailAnnouncement() ? 'true' : null"
+                [attr.data-state]="contactService.emailCopyState()"
+              >
+                {{ contactService.emailAnnouncement() }}
+              </span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 pt-4 small footer-muted">
+      <p class="mb-0">
+        © {{ currentYear() }} {{ contactService.ownerName }}. Atuação como profissional autônomo (Pessoa Física).
+        <span class="d-inline-block">Marcas e logotipos exibidos pertencem aos seus respectivos proprietários.</span>
+      </p>
+      <a
+        href="#inicio"
+        class="footer-link d-inline-flex align-items-center gap-1 align-self-start align-self-sm-center"
+        (click)="navigateTo('inicio', $event)"
+      >
+        <span>Voltar ao topo</span>
+        <i class="bi bi-arrow-up" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</footer>

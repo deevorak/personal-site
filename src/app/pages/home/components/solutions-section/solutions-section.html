@@ -1,0 +1,89 @@
+<section id="solucoes" class="section-padding section-subtle">
+  <div class="container">
+    <div class="row justify-content-between align-items-end g-3 mb-5">
+      <div class="col-lg-8">
+        <span class="section-eyebrow mb-3">
+          <i class="bi bi-grid-1x2" aria-hidden="true"></i>
+          <span>Soluções / Como posso ajudar</span>
+        </span>
+        <h2 class="section-title mb-3">
+          Tecnologia clara para resolver gargalos de atendimento, presença e operação
+        </h2>
+        <p class="section-lead mb-0">
+          Cada empresa tem um ponto de partida diferente. Você pode iniciar por uma frente específica
+          ou combinar soluções conforme a maturidade e a prioridade do seu negócio.
+        </p>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-lg-2 g-4">
+      @for (item of solutions; track item.key) {
+        <div class="col">
+          <article class="card solution-card h-100 border-0">
+            <div class="card-body p-4 p-xl-4 d-flex flex-column">
+              <div class="d-flex align-items-start justify-content-between gap-3 mb-3">
+                <div class="solution-icon-wrap" aria-hidden="true">
+                  <i class="bi" [class]="item.icon"></i>
+                </div>
+                <span class="solution-badge">{{ item.badge }}</span>
+              </div>
+
+              <h3 class="h4 fw-bold mb-2">{{ item.title }}</h3>
+              <p class="text-secondary mb-3">{{ item.summary }}</p>
+
+              <div class="solution-results rounded-3 p-3 mb-3">
+                <p class="small fw-semibold text-dark mb-2">O que resolve na prática:</p>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0 small">
+                  @for (result of item.practicalResults; track result) {
+                    <li class="d-flex align-items-start gap-2">
+                      <i class="bi bi-check2-circle text-primary mt-1 flex-shrink-0" aria-hidden="true"></i>
+                      <span>{{ result }}</span>
+                    </li>
+                  }
+                </ul>
+              </div>
+
+              <p class="small text-muted mb-4">
+                <strong class="text-dark">Indicado para:</strong> {{ item.segmentExamples }}
+              </p>
+
+              <div class="mt-auto d-flex flex-wrap align-items-center justify-content-between gap-2 pt-2 border-top">
+                <button
+                  type="button"
+                  class="btn btn-outline-slate btn-sm px-3 py-2 d-inline-flex align-items-center gap-2"
+                  (click)="openTopicInquiry(item.key)"
+                >
+                  <i class="bi bi-whatsapp text-success" aria-hidden="true"></i>
+                  <span>{{ item.ctaLabel }}</span>
+                </button>
+                <a
+                  class="small fw-semibold text-decoration-none d-inline-flex align-items-center gap-1"
+                  [href]="contactService.buildWhatsAppUrl(contactService.getTopicDefaultMessage(item.key))"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Abrir direto</span>
+                  <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+
+    <div class="segments-bar rounded-4 p-4 mt-4 d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+      <div>
+        <h3 class="h6 fw-bold mb-1">Atendimento flexível para pequenas e médias empresas de qualquer segmento</h3>
+        <p class="small text-muted mb-0">
+          O foco está no fluxo do cliente e na organização do trabalho — não importa o ramo de atuação.
+        </p>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        @for (segment of segments; track segment) {
+          <span class="segment-chip">{{ segment }}</span>
+        }
+      </div>
+    </div>
+  </div>
+</section>

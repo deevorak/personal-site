@@ -1,1 +1,316 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-canvas: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-subtle: #eff4f8;
+  --bg-navy: #0f233c;
+  --bg-navy-deep: #0b192c;
+
+  --ink-primary: #0f172a;
+  --ink-secondary: #334155;
+  --ink-muted: #526277;
+
+  --accent-primary: #0b5cab;
+  --accent-primary-hover: #094a8a;
+  --accent-primary-soft: #e8f1fb;
+
+  --accent-whatsapp: #15803d;
+  --accent-whatsapp-hover: #166534;
+  --accent-whatsapp-soft: #eaf7ef;
+
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 10px 28px -8px rgba(15, 35, 60, 0.09);
+  --shadow-lg: 0 18px 42px -12px rgba(15, 35, 60, 0.14);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+
+  /* Ajustes dos tokens do Bootstrap 5.3 */
+  --bs-body-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --bs-body-color: var(--ink-secondary);
+  --bs-body-bg: var(--bg-canvas);
+  --bs-primary: var(--accent-primary);
+  --bs-primary-rgb: 11, 92, 171;
+  --bs-border-color: var(--border-subtle);
+  --bs-link-color: var(--accent-primary);
+  --bs-link-hover-color: var(--accent-primary-hover);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  color: var(--ink-secondary);
+  background-color: var(--bg-canvas);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.balanced-heading {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  color: var(--ink-primary);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p,
+li,
+.pretty-copy {
+  text-wrap: pretty;
+}
+
+.font-mono-label {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+section[id],
+.anchor-target[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+.section-padding {
+  padding-block: 4.25rem;
+}
+
+@media (min-width: 992px) {
+  .section-padding {
+    padding-block: 5.75rem;
+  }
+}
+
+.section-canvas {
+  background-color: var(--bg-canvas);
+}
+
+.section-surface {
+  background-color: var(--bg-surface);
+}
+
+.section-subtle {
+  background-color: var(--bg-subtle);
+}
+
+.section-navy {
+  background-color: var(--bg-navy);
+  color: #f8fafc;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #ffffff;
+  }
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  background-color: var(--accent-primary-soft);
+  border: 1px solid rgba(11, 92, 171, 0.16);
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 2.8vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-lead {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink-secondary);
+  max-width: 64ch;
+}
+
+/* Botões orientados à conversão e contraste acessível */
+.btn {
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(11, 92, 171, 0.16);
+}
+
+.btn-whatsapp {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--accent-whatsapp);
+  --bs-btn-border-color: var(--accent-whatsapp);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--accent-whatsapp-hover);
+  --bs-btn-hover-border-color: var(--accent-whatsapp-hover);
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #14532d;
+  --bs-btn-active-border-color: #14532d;
+  --bs-btn-focus-shadow-rgb: 21, 128, 61;
+  box-shadow: 0 6px 18px -6px rgba(21, 128, 61, 0.45);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px -8px rgba(21, 128, 61, 0.55);
+}
+
+.btn-brand {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--accent-primary);
+  --bs-btn-border-color: var(--accent-primary);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--accent-primary-hover);
+  --bs-btn-hover-border-color: var(--accent-primary-hover);
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #083d73;
+  --bs-btn-active-border-color: #083d73;
+}
+
+.btn-outline-slate {
+  --bs-btn-color: var(--ink-primary);
+  --bs-btn-bg: var(--bg-surface);
+  --bs-btn-border-color: var(--border-strong);
+  --bs-btn-hover-color: var(--accent-primary);
+  --bs-btn-hover-bg: var(--accent-primary-soft);
+  --bs-btn-hover-border-color: var(--accent-primary);
+  --bs-btn-active-color: var(--accent-primary-hover);
+  --bs-btn-active-bg: var(--accent-primary-soft);
+}
+
+/* Padrão copy-button acessível (feedback fora do botão, controlado por opacity) */
+.copy-action-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.copy-btn {
+  min-inline-size: 24px;
+  min-block-size: 40px;
+}
+
+.copy-btn[data-copied='true'] {
+  border-color: var(--accent-whatsapp);
+  color: var(--accent-whatsapp);
+  background-color: var(--accent-whatsapp-soft);
+}
+
+.copy-btn[data-failed='true'] {
+  border-color: #b91c1c;
+  color: #b91c1c;
+  background-color: #fef2f2;
+}
+
+.copy-feedback-bubble {
+  position: absolute;
+  inset-block-end: calc(100% + 0.45rem);
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: var(--ink-primary);
+  box-shadow: var(--shadow-sm);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.16s ease;
+  z-index: 20;
+}
+
+.copy-feedback-bubble[data-visible='true'] {
+  opacity: 1;
+}
+
+.copy-feedback-bubble[data-state='copied'] {
+  background-color: var(--accent-whatsapp);
+}
+
+.copy-feedback-bubble[data-state='failed'] {
+  background-color: #b91c1c;
+}
+
+/* Accordion Bootstrap personalizado */
+.faq-accordion .accordion-item {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.875rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-accordion .accordion-button {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.035rem;
+  color: var(--ink-primary);
+  background-color: var(--bg-surface);
+  padding: 1.25rem 1.375rem;
+  box-shadow: none;
+  text-align: start;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+  color: var(--accent-primary);
+  background-color: #f4f8fd;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.faq-accordion .accordion-body {
+  padding: 1.25rem 1.375rem;
+  color: var(--ink-secondary);
+  line-height: 1.7;
+  font-size: 0.975rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .btn-whatsapp:hover {
+    transform: none;
+  }
+}

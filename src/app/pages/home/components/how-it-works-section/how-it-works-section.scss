@@ -1,0 +1,28 @@
+.process-header {
+  max-width: 44rem;
+}
+
+.step-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  background-color: var(--bg-navy);
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.step-line {
+  height: 1px;
+  background-color: var(--border-subtle);
+}

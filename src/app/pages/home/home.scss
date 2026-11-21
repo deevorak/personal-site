@@ -1,0 +1,14 @@
+.deferred-placeholder {
+  min-height: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--border-strong);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.deferred-placeholder-dark {
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+}

@@ -1,0 +1,114 @@
+<div class="modal-header border-bottom px-4 py-3">
+  <div>
+    <h2 class="modal-title h5 fw-bold mb-1" id="whatsappModalTitle">
+      Conversa direta no WhatsApp
+    </h2>
+    <p class="text-muted small mb-0">
+      Escolha o tema e ajuste a mensagem inicial antes de abrir o WhatsApp.
+    </p>
+  </div>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Fechar janela de mensagem"
+    (click)="activeModal.dismiss()"
+  ></button>
+</div>
+
+<div class="modal-body px-4 py-4">
+  <div class="mb-3">
+    <label for="modalTopicSelect" class="form-label fw-semibold small text-dark">
+      Qual frente melhor descreve sua necessidade?
+    </label>
+    <select
+      id="modalTopicSelect"
+      class="form-select"
+      [value]="contactService.selectedTopic()"
+      (change)="onTopicChange($event)"
+    >
+      @for (topic of contactService.topicOptions; track topic.key) {
+        <option [value]="topic.key">{{ topic.label }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <div class="d-flex justify-content-between align-items-center mb-1">
+      <label for="modalCustomMessage" class="form-label fw-semibold small text-dark mb-0">
+        Mensagem inicial (editável)
+      </label>
+      <button
+        type="button"
+        class="btn btn-link btn-sm p-0 text-decoration-none"
+        (click)="contactService.resetMessageToTopic()"
+      >
+        Restaurar sugestão
+      </button>
+    </div>
+    <textarea
+      id="modalCustomMessage"
+      class="form-control"
+      rows="4"
+      [value]="contactService.customMessage()"
+      (input)="onMessageInput($event)"
+      placeholder="Escreva brevemente o contexto da sua empresa..."
+    ></textarea>
+  </div>
+
+  <div class="modal-channel-summary rounded-3 p-3">
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
+      <div class="small">
+        <span class="fw-semibold text-dark d-block">Atendimento direto com {{ contactService.ownerName }}</span>
+        <span class="text-muted">WhatsApp: {{ contactService.whatsappDisplay }} • E-mail: {{ contactService.email }}</span>
+      </div>
+
+      <span class="copy-action-wrapper">
+        <button
+          type="button"
+          class="btn btn-outline-slate btn-sm copy-btn d-inline-flex align-items-center gap-1"
+          [attr.data-copied]="contactService.emailCopyState() === 'copied' ? 'true' : null"
+          [attr.data-failed]="contactService.emailCopyState() === 'failed' ? 'true' : null"
+          (click)="contactService.copyEmail()"
+        >
+          <i
+            class="bi"
+            [class.bi-clipboard]="contactService.emailCopyState() === 'idle'"
+            [class.bi-check2]="contactService.emailCopyState() === 'copied'"
+            [class.bi-exclamation-circle]="contactService.emailCopyState() === 'failed'"
+            aria-hidden="true"
+          ></i>
+          <span>{{ contactService.emailCopyState() === 'copied' ? 'E-mail copiado' : 'Copiar e-mail' }}</span>
+        </button>
+        <span
+          class="copy-feedback-bubble"
+          role="status"
+          [attr.data-visible]="contactService.emailAnnouncement() ? 'true' : null"
+          [attr.data-state]="contactService.emailCopyState()"
+        >
+          {{ contactService.emailAnnouncement() }}
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer border-top px-4 py-3 d-flex flex-column-reverse flex-sm-row justify-content-between gap-2">
+  <a
+    class="btn btn-outline-slate d-inline-flex align-items-center justify-content-center gap-2"
+    [href]="contactService.mailtoUrl()"
+  >
+    <i class="bi bi-envelope" aria-hidden="true"></i>
+    <span>Preferir enviar por e-mail</span>
+  </a>
+
+  <a
+    class="btn btn-whatsapp d-inline-flex align-items-center justify-content-center gap-2 px-4"
+    [href]="contactService.whatsappUrl()"
+    target="_blank"
+    rel="noopener noreferrer"
+    (click)="activeModal.close('whatsapp')"
+  >
+    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+    <span>Abrir conversa no WhatsApp</span>
+  </a>
+</div>

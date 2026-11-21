@@ -1,0 +1,190 @@
+<section class="section-padding section-navy" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="row g-4 g-lg-5 align-items-stretch">
+      <div class="col-lg-6 d-flex flex-column justify-content-between">
+        <div>
+          <span class="contact-eyebrow mb-3">
+            <i class="bi bi-chat-dots" aria-hidden="true"></i>
+            <span>Contato direto</span>
+          </span>
+
+          <h2 id="contact-heading" class="section-title text-white mb-3">
+            Vamos conversar sobre o atendimento e os processos da sua empresa?
+          </h2>
+
+          <p class="contact-lead mb-4">
+            Conte brevemente o que hoje consome tempo da sua equipe ou dificulta o atendimento aos
+            clientes. Retorno diretamente para avaliarmos o caminho mais simples e viável.
+          </p>
+
+          <ul class="list-unstyled d-flex flex-column gap-2 mb-4 contact-highlights">
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-info" aria-hidden="true"></i>
+              <span>Conversa direta com {{ contactService.ownerName }}</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-info" aria-hidden="true"></i>
+              <span>+20 anos de experiência corporativa e atendimento ao cidadão</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-info" aria-hidden="true"></i>
+              <span>Atuação como profissional autônomo (pessoa física, sem CNPJ)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="email-contact-card rounded-4 p-4">
+          <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
+            <div>
+              <span class="small text-uppercase fw-semibold email-label d-block mb-1">
+                Prefere falar por e-mail?
+              </span>
+              <a
+                class="h5 fw-bold text-white text-decoration-none d-inline-block mb-0 text-break"
+                [href]="contactService.emailHref"
+              >
+                {{ contactService.email }}
+              </a>
+            </div>
+
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <a
+                class="btn btn-outline-light btn-sm px-3 py-2 d-inline-flex align-items-center gap-2"
+                [href]="contactService.mailtoUrl()"
+              >
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+                <span>Enviar e-mail</span>
+              </a>
+
+              <span class="copy-action-wrapper">
+                <button
+                  type="button"
+                  class="btn btn-light btn-sm copy-btn px-3 py-2 d-inline-flex align-items-center gap-2"
+                  [attr.data-copied]="contactService.emailCopyState() === 'copied' ? 'true' : null"
+                  [attr.data-failed]="contactService.emailCopyState() === 'failed' ? 'true' : null"
+                  [attr.aria-label]="'Copiar endereço de e-mail ' + contactService.email"
+                  (click)="contactService.copyEmail()"
+                >
+                  <i
+                    class="bi"
+                    [class.bi-clipboard]="contactService.emailCopyState() === 'idle'"
+                    [class.bi-check2]="contactService.emailCopyState() === 'copied'"
+                    [class.bi-exclamation-circle]="contactService.emailCopyState() === 'failed'"
+                    aria-hidden="true"
+                  ></i>
+                  <span>{{ contactService.emailCopyState() === 'copied' ? 'Copiado!' : 'Copiar e-mail' }}</span>
+                </button>
+                <span
+                  class="copy-feedback-bubble"
+                  role="status"
+                  [attr.data-visible]="contactService.emailAnnouncement() ? 'true' : null"
+                  [attr.data-state]="contactService.emailCopyState()"
+                >
+                  {{ contactService.emailAnnouncement() }}
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="whatsapp-composer-card rounded-4 p-4 p-xl-5 h-100 d-flex flex-column">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pb-3 mb-3 border-bottom">
+            <div>
+              <h3 class="h4 fw-bold text-dark mb-1">Iniciar conversa no WhatsApp</h3>
+              <p class="small text-muted mb-0">
+                Número direto: <strong class="text-dark">{{ contactService.whatsappDisplay }}</strong>
+              </p>
+            </div>
+            <span class="badge text-bg-success bg-opacity-10 text-success border border-success-subtle px-3 py-2">
+              Mensagem editável
+            </span>
+          </div>
+
+          <div class="mb-3">
+            <span class="form-label fw-semibold small text-dark d-block mb-2">
+              1. Escolha o assunto (opcional):
+            </span>
+            <div class="d-flex flex-wrap gap-2" role="group" aria-label="Selecionar tema da mensagem">
+              @for (topic of contactService.topicOptions; track topic.key) {
+                <button
+                  type="button"
+                  class="btn btn-sm topic-pill"
+                  [class.is-selected]="contactService.selectedTopic() === topic.key"
+                  [attr.aria-pressed]="contactService.selectedTopic() === topic.key"
+                  (click)="selectTopic(topic.key)"
+                >
+                  {{ topic.shortLabel }}
+                </button>
+              }
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <label for="contactWhatsappMessage" class="form-label fw-semibold small text-dark mb-0">
+                2. Revise ou edite sua mensagem inicial:
+              </label>
+              <button
+                type="button"
+                class="btn btn-link btn-sm p-0 text-decoration-none"
+                (click)="contactService.resetMessageToTopic()"
+              >
+                Restaurar texto
+              </button>
+            </div>
+            <textarea
+              id="contactWhatsappMessage"
+              class="form-control"
+              rows="4"
+              [value]="contactService.customMessage()"
+              (input)="onMessageInput($event)"
+              placeholder="Escreva aqui como posso ajudar sua empresa..."
+            ></textarea>
+          </div>
+
+          <div class="mt-auto d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-2">
+            <a
+              class="btn btn-whatsapp btn-lg flex-grow-1 px-4 py-3 d-inline-flex align-items-center justify-content-center gap-2"
+              [href]="contactService.whatsappUrl()"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-whatsapp fs-5" aria-hidden="true"></i>
+              <span>Enviar no WhatsApp</span>
+            </a>
+
+            <span class="copy-action-wrapper">
+              <button
+                type="button"
+                class="btn btn-outline-slate btn-lg copy-btn w-100 px-3 py-3 d-inline-flex align-items-center justify-content-center gap-2"
+                [attr.data-copied]="contactService.phoneCopyState() === 'copied' ? 'true' : null"
+                [attr.data-failed]="contactService.phoneCopyState() === 'failed' ? 'true' : null"
+                [attr.aria-label]="'Copiar número do WhatsApp ' + contactService.whatsappDisplay"
+                (click)="contactService.copyPhone()"
+              >
+                <i
+                  class="bi"
+                  [class.bi-clipboard]="contactService.phoneCopyState() === 'idle'"
+                  [class.bi-check2]="contactService.phoneCopyState() === 'copied'"
+                  [class.bi-exclamation-circle]="contactService.phoneCopyState() === 'failed'"
+                  aria-hidden="true"
+                ></i>
+                <span>{{ contactService.phoneCopyState() === 'copied' ? 'Copiado!' : 'Copiar número' }}</span>
+              </button>
+              <span
+                class="copy-feedback-bubble"
+                role="status"
+                [attr.data-visible]="contactService.phoneAnnouncement() ? 'true' : null"
+                [attr.data-state]="contactService.phoneCopyState()"
+              >
+                {{ contactService.phoneAnnouncement() }}
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

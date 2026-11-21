@@ -1,0 +1,55 @@
+<section class="section-padding section-subtle border-top" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="row g-4 g-lg-5">
+      <div class="col-lg-4">
+        <span class="section-eyebrow mb-3">
+          <i class="bi bi-question-circle" aria-hidden="true"></i>
+          <span>Perguntas frequentes</span>
+        </span>
+        <h2 id="faq-heading" class="section-title mb-3">Dúvidas comuns antes de começarmos</h2>
+        <p class="text-secondary mb-4">
+          Transparência desde o primeiro contato sobre atuação como pessoa física, atendimento a
+          diferentes segmentos, uso responsável de IA e formato de trabalho.
+        </p>
+
+        <div class="faq-helper-card rounded-4 p-4">
+          <h3 class="h6 fw-bold mb-2">Ficou alguma dúvida específica?</h3>
+          <p class="small text-secondary mb-3">
+            Me envie uma mensagem rápida contando seu cenário. Respondo de forma direta e sem
+            compromisso.
+          </p>
+          <a
+            class="btn btn-outline-slate btn-sm px-3 py-2 d-inline-flex align-items-center gap-2"
+            [href]="contactService.whatsappUrl()"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="bi bi-whatsapp text-success" aria-hidden="true"></i>
+            <span>Tirar dúvida no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div ngbAccordion [closeOthers]="true" class="faq-accordion">
+          @for (item of faqs; track item.id; let idx = $index) {
+            <div ngbAccordionItem [collapsed]="idx !== 0">
+              <h3 ngbAccordionHeader>
+                <button ngbAccordionButton type="button">
+                  {{ item.question }}
+                </button>
+              </h3>
+              <div ngbAccordionCollapse>
+                <div ngbAccordionBody>
+                  <ng-template>
+                    <p class="mb-0">{{ item.answer }}</p>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,73 @@
+.site-header {
+  background-color: rgba(248, 250, 252, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &.is-scrolled {
+    background-color: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 6px 20px -10px rgba(15, 35, 60, 0.14);
+  }
+}
+
+.brand-monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.375rem;
+  height: 2.375rem;
+  border-radius: 0.625rem;
+  background-color: var(--bg-navy);
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.975rem;
+  color: var(--ink-primary);
+  white-space: normal;
+
+  @media (min-width: 576px) {
+    font-size: 1.025rem;
+  }
+}
+
+.brand-role {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.nav-link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--ink-secondary);
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover {
+    color: var(--accent-primary);
+    background-color: var(--accent-primary-soft);
+  }
+
+  &.is-active {
+    color: var(--accent-primary);
+    font-weight: 600;
+    background-color: var(--accent-primary-soft);
+  }
+}
+
+@media (min-width: 1200px) {
+  .border-xl-0 {
+    border-top: 0 !important;
+  }
+}
