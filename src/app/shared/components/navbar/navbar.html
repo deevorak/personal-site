@@ -47,24 +47,21 @@
         </ul>
 
         <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-2 pt-2 pt-xl-0 border-top border-xl-0">
-          <a
-            class="btn btn-outline-slate btn-sm px-3 py-2 d-inline-flex align-items-center justify-content-center gap-2"
-            [href]="contactService.emailHref"
-            [attr.aria-label]="'Enviar e-mail para ' + contactService.email"
+          <button
+            type="button"
+            class="btn btn-outline-slate btn-sm theme-toggle-btn px-3 py-2 d-inline-flex align-items-center justify-content-center gap-2"
+            [attr.title]="themeService.toggleTooltip()"
+            (click)="themeService.toggleTheme()"
           >
-            <i class="bi bi-envelope" aria-hidden="true"></i>
-            <span>E-mail</span>
-          </a>
-
-          <a
-            class="btn btn-whatsapp btn-sm px-3 py-2 d-inline-flex align-items-center justify-content-center gap-2"
-            [href]="contactService.whatsappUrl()"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="bi bi-whatsapp" aria-hidden="true"></i>
-            <span>Falar no WhatsApp</span>
-          </a>
+            <span class="theme-option-when-light d-inline-flex align-items-center gap-2">
+              <i class="bi bi-moon-stars" aria-hidden="true"></i>
+              <span><span class="visually-hidden">Ativar </span><span class="theme-toggle-text">tema escuro</span></span>
+            </span>
+            <span class="theme-option-when-dark d-inline-flex align-items-center gap-2">
+              <i class="bi bi-sun" aria-hidden="true"></i>
+              <span><span class="visually-hidden">Ativar </span><span class="theme-toggle-text">tema claro</span></span>
+            </span>
+          </button>
         </div>
       </div>
     </div>

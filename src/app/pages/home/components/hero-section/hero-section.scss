@@ -1,6 +1,6 @@
 .hero-section {
   padding-block: 3.5rem 4.25rem;
-  background: linear-gradient(180deg, #ffffff 0%, var(--bg-canvas) 100%);
+  background: linear-gradient(180deg, var(--hero-gradient-start) 0%, var(--bg-canvas) 100%);
   border-bottom: 1px solid var(--border-subtle);
 
   @media (min-width: 992px) {
@@ -72,7 +72,7 @@
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--accent-whatsapp);
+  color: var(--accent-whatsapp-text);
   background-color: var(--accent-whatsapp-soft);
 }
 

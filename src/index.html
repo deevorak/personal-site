@@ -14,7 +14,15 @@
       content="Carlos Rocha, agentes de IA para atendimento, automação de processos, sites corporativos, sistemas sob medida, Java 25, Spring Boot, Keycloak, PostgreSQL pgvector, Redis, Kafka, n8n, Docker, Kubernetes, Cloudflare R2, VPS"
     />
     <meta name="author" content="Carlos Rocha" />
-    <meta name="theme-color" content="#0F233C" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        document.querySelector('meta[name="color-scheme"]').content =
+          localStorage.getItem('color-scheme') ?? 'light dark';
+      } catch {}
+    </script>
+    <meta name="theme-color" content="#0f233c" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1320" media="(prefers-color-scheme: dark)" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />

@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, inject, signal } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactService } from '../../../core/services/contact.service';
+import { ThemeService } from '../../../core/services/theme.service';
 
 interface NavLinkItem {
   id: string;
@@ -17,6 +18,7 @@ interface NavLinkItem {
 })
 export class Navbar implements OnInit, OnDestroy {
   readonly contactService = inject(ContactService);
+  readonly themeService = inject(ThemeService);
   private readonly document = inject(DOCUMENT);
 
   readonly isMenuCollapsed = signal(true);
