@@ -1,29 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Carlos Rocha — CR">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Carlos Rocha Consultoria em TI — CR">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0F233C" />
-      <stop offset="100%" stop-color="#173459" />
+    <linearGradient id="cr-accent" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2DD4BF" />
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="url(#bg)" />
-  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#60A5FA" stroke-opacity="0.28" stroke-width="1.5" />
-  <!-- Letra C em azul técnico (#60A5FA) -->
+  <!-- Fundo navy-slate 0px -->
+  <rect width="64" height="64" fill="#0B1324" />
+  <!-- Borda arquitetural e barra superior ciano -->
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" fill="none" stroke="#334155" stroke-width="1.5" />
+  <rect x="0" y="0" width="64" height="2.5" fill="#38BDF8" />
+  <!-- Letra C geométrica com gradiente ciano-turquesa -->
   <path
-    d="M28 21.5A11.5 11.5 0 1 0 28 42.5"
+    d="M28.5 21A11.5 11.5 0 1 0 28.5 43"
     fill="none"
-    stroke="#60A5FA"
+    stroke="url(#cr-accent)"
     stroke-width="5.5"
-    stroke-linecap="round"
+    stroke-linecap="square"
   />
-  <!-- Letra R em branco (#FFFFFF) -->
+  <!-- Letra R geométrica em branco técnico -->
   <path
-    d="M35 43V21h8.5a6.5 6.5 0 0 1 0 13H35m7.5 0L50 43"
+    d="M35.5 43.5V20.5h9a6.75 6.75 0 0 1 0 13.5h-9m8 0 7.5 9.5"
     fill="none"
-    stroke="#FFFFFF"
+    stroke="#F8FAFC"
     stroke-width="5.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
   />
-  <!-- Ponto de conexão (IA / Automação) -->
-  <circle cx="53.5" cy="14.5" r="3" fill="#38BDF8" />
+  <!-- Nó de circuito em turquesa -->
+  <rect x="51" y="11" width="5" height="5" fill="#2DD4BF" />
 </svg>

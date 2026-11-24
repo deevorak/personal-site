@@ -29,16 +29,16 @@ export class Home {
 
   constructor() {
     this.title.setTitle(
-      'Carlos Rocha | Agentes de IA, Automação e Software sob Medida'
+      'Carlos Rocha Consultoria em TI | Agentes de IA, Automação e Software sob Medida'
     );
     this.meta.updateTag({
       name: 'description',
       content:
-        'Carlos Rocha — Analista de TI e Desenvolvedor de Software autônomo (pessoa física, sem CNPJ) com +20 anos de experiência corporativa e atuação em sistemas de atendimento ao cidadão. Agentes de IA, sites corporativos, automação e sistemas sob medida.',
+        'Carlos Rocha Consultoria em TI — Analista de TI e Desenvolvedor de Software autônomo (pessoa física, sem CNPJ) com +20 anos de experiência corporativa e atuação em sistemas de atendimento ao cidadão. Agentes de IA, sites corporativos, automação e sistemas sob medida.',
     });
     this.meta.updateTag({
       property: 'og:title',
-      content: 'Carlos Rocha | Agentes de IA, Automação e Software sob Medida',
+      content: 'Carlos Rocha Consultoria em TI | Agentes de IA, Automação e Software sob Medida',
     });
     this.meta.updateTag({
       property: 'og:description',

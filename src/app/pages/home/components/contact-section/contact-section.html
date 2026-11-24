@@ -1,4 +1,4 @@
-<section class="section-padding section-navy" aria-labelledby="contact-heading">
+<section class="section-padding section-lowest border-top" aria-labelledby="contact-heading">
   <div class="container">
     <div class="row g-4 g-lg-5 align-items-stretch">
       <div class="col-lg-6 d-flex flex-column justify-content-between">
@@ -19,21 +19,21 @@
 
           <ul class="list-unstyled d-flex flex-column gap-2 mb-4 contact-highlights">
             <li class="d-flex align-items-center gap-2">
-              <i class="bi bi-check-circle-fill text-info" aria-hidden="true"></i>
+              <i class="bi bi-check-circle-fill contact-accent-teal" aria-hidden="true"></i>
               <span>Conversa direta com {{ contactService.ownerName }}</span>
             </li>
             <li class="d-flex align-items-center gap-2">
-              <i class="bi bi-check-circle-fill text-info" aria-hidden="true"></i>
+              <i class="bi bi-check-circle-fill contact-accent-teal" aria-hidden="true"></i>
               <span>+20 anos de experiência corporativa e atendimento ao cidadão</span>
             </li>
             <li class="d-flex align-items-center gap-2">
-              <i class="bi bi-check-circle-fill text-info" aria-hidden="true"></i>
+              <i class="bi bi-check-circle-fill contact-accent-teal" aria-hidden="true"></i>
               <span>Atuação como profissional autônomo (pessoa física, sem CNPJ)</span>
             </li>
           </ul>
         </div>
 
-        <div class="email-contact-card rounded-4 p-4">
+        <div class="email-contact-card p-4">
           <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
             <div>
               <span class="small text-uppercase fw-semibold email-label d-block mb-1">
@@ -49,7 +49,7 @@
 
             <div class="d-flex flex-wrap align-items-center gap-2">
               <a
-                class="btn btn-outline-light btn-sm px-3 py-2 d-inline-flex align-items-center gap-2"
+                class="btn btn-outline-cyan-dark btn-sm px-3 py-2 d-inline-flex align-items-center gap-2"
                 [href]="contactService.mailtoUrl()"
               >
                 <i class="bi bi-envelope" aria-hidden="true"></i>
@@ -59,7 +59,7 @@
               <span class="copy-action-wrapper">
                 <button
                   type="button"
-                  class="btn btn-light btn-sm copy-btn px-3 py-2 d-inline-flex align-items-center gap-2"
+                  class="btn btn-outline-neutral-dark btn-sm copy-btn px-3 py-2 d-inline-flex align-items-center gap-2"
                   [attr.data-copied]="contactService.emailCopyState() === 'copied' ? 'true' : null"
                   [attr.data-failed]="contactService.emailCopyState() === 'failed' ? 'true' : null"
                   [attr.aria-label]="'Copiar endereço de e-mail ' + contactService.email"
@@ -89,7 +89,7 @@
       </div>
 
       <div class="col-lg-6">
-        <div class="whatsapp-composer-card rounded-4 p-4 p-xl-5 h-100 d-flex flex-column">
+        <div class="whatsapp-composer-card p-4 p-xl-5 h-100 d-flex flex-column">
           <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pb-3 mb-3 border-bottom">
             <div>
               <h3 class="h4 fw-bold text-dark mb-1">Iniciar conversa no WhatsApp</h3>
@@ -97,7 +97,7 @@
                 Número direto: <strong class="text-dark">{{ contactService.whatsappDisplay }}</strong>
               </p>
             </div>
-            <span class="badge text-bg-success bg-opacity-10 text-success border border-success-subtle px-3 py-2">
+            <span class="composer-status-tag px-2 py-1">
               Mensagem editável
             </span>
           </div>

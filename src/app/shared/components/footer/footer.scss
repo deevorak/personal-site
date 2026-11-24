@@ -1,21 +1,27 @@
 .site-footer {
-  background-color: var(--bg-navy-deep);
-  color: #e2e8f0;
+  background-color: var(--bg-lowest-dark);
+  border-top: 1px solid var(--border-subtle-dark);
+  color: #cbd5e1;
 }
 
-.footer-monogram {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #ffffff;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  font-size: 0.875rem;
+.footer-divider {
+  border-color: var(--border-subtle-dark) !important;
+}
+
+.footer-logo-picture {
+  display: inline-block;
+}
+
+.footer-logo-img {
+  height: 3.25rem;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.footer-heading {
+  font-family: var(--font-display);
+  color: #f8fafc;
 }
 
 .footer-text {
@@ -28,18 +34,36 @@
   color: #94a3b8;
 }
 
+.footer-accent-cyan {
+  color: #38bdf8;
+}
+
+.footer-accent-teal {
+  color: #2dd4bf;
+}
+
 .footer-link {
   color: #cbd5e1;
   text-decoration: none;
   transition: color 0.15s ease;
 
   &:hover {
-    color: #ffffff;
+    color: #38bdf8;
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 }
 
-.copy-btn {
+.footer-copy-btn {
   min-block-size: 30px;
+  border-radius: 0px;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  background-color: transparent;
+
+  &:hover {
+    border-color: #38bdf8;
+    color: #38bdf8;
+    background-color: rgba(56, 189, 248, 0.12);
+  }
 }

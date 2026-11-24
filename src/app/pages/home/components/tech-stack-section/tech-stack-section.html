@@ -1,4 +1,4 @@
-<section class="section-padding section-subtle border-top" aria-labelledby="tech-stack-heading">
+<section class="section-padding section-surface border-top" aria-labelledby="tech-stack-heading">
   <div class="container">
     <div class="row justify-content-between align-items-end g-3 mb-5">
       <div class="col-lg-8">
@@ -18,9 +18,9 @@
     </div>
 
     <div class="row row-cols-1 row-cols-lg-2 g-4">
-      @for (category of categories; track category.title) {
+      @for (category of categories; track category.title; let isEven = $even) {
         <div class="col">
-          <article class="card tech-pillar-card h-100 border-0">
+          <article class="card tech-pillar-card h-100" [class.is-secondary-accent]="!isEven">
             <div class="card-body p-4 d-flex flex-column">
               <div class="d-flex align-items-start justify-content-between gap-3 mb-3">
                 <div class="d-flex align-items-center gap-3">
@@ -37,7 +37,7 @@
 
               <ul class="list-unstyled d-flex flex-column gap-3 mb-0 mt-2">
                 @for (tech of category.items; track tech.name) {
-                  <li class="tech-item-row rounded-3 p-3">
+                  <li class="tech-item-row p-3">
                     <div class="d-flex align-items-start gap-3">
                       <span class="tech-logo-box" aria-hidden="true">
                         <img
@@ -83,7 +83,7 @@
       }
     </div>
 
-    <div class="stack-summary-bar rounded-4 p-4 mt-4">
+    <div class="stack-summary-bar p-4 mt-4">
       <div class="row align-items-center g-3">
         <div class="col-lg-5">
           <h3 class="h6 fw-bold mb-1">Ecossistema completo e dimensionamento consciente</h3>

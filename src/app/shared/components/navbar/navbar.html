@@ -2,19 +2,41 @@
   <nav class="navbar navbar-expand-xl py-2 py-lg-3" aria-label="Navegação principal">
     <div class="container">
       <a
-        class="navbar-brand d-flex align-items-center gap-2 gap-sm-3 me-2"
+        class="navbar-brand d-flex align-items-center me-2 py-0"
         href="#inicio"
         (click)="navigateTo('inicio', $event)"
       >
-        <span class="brand-monogram" aria-hidden="true">CR</span>
-        <span class="d-flex flex-column lh-sm">
-          <span class="brand-name">{{ contactService.ownerName }}</span>
-          <span class="brand-role">Analista de TI &amp; Desenvolvedor de Software</span>
-        </span>
+        @if (themeService.isDark()) {
+          <picture class="brand-logo-picture">
+            <source srcset="brand/logo-horizontal.webp" type="image/webp" />
+            <img
+              src="brand/logo-horizontal.png"
+              alt="Carlos Rocha Consultoria em TI"
+              width="208"
+              height="54"
+              fetchpriority="high"
+              decoding="async"
+              class="brand-logo-img"
+            />
+          </picture>
+        } @else {
+          <picture class="brand-logo-picture">
+            <source srcset="brand/logo-horizontal-light.webp" type="image/webp" />
+            <img
+              src="brand/logo-horizontal-light.png"
+              alt="Carlos Rocha Consultoria em TI"
+              width="208"
+              height="54"
+              fetchpriority="high"
+              decoding="async"
+              class="brand-logo-img"
+            />
+          </picture>
+        }
       </a>
 
       <button
-        class="navbar-toggler border-0 px-2 py-1"
+        class="navbar-toggler px-2 py-1"
         type="button"
         aria-controls="mainNavbarNav"
         [attr.aria-expanded]="!isMenuCollapsed()"
@@ -34,7 +56,7 @@
           @for (item of navLinks; track item.id) {
             <li class="nav-item">
               <a
-                class="nav-link text-nowrap px-2 px-xxl-3 py-2 rounded-2"
+                class="nav-link text-nowrap px-2 px-xxl-3 py-2"
                 [href]="'#' + item.id"
                 [attr.aria-current]="activeSection() === item.id ? 'location' : null"
                 [class.is-active]="activeSection() === item.id"
@@ -49,7 +71,7 @@
         <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-2 pt-2 pt-xl-0 border-top border-xl-0">
           <button
             type="button"
-            class="btn btn-outline-slate btn-sm theme-toggle-btn px-3 py-2 d-inline-flex align-items-center justify-content-center gap-2"
+            class="btn btn-outline-tech-neutral btn-sm theme-toggle-btn px-3 py-2 d-inline-flex align-items-center justify-content-center gap-2"
             [attr.title]="themeService.toggleTooltip()"
             (click)="themeService.toggleTheme()"
           >

@@ -4,7 +4,6 @@ import { DestroyRef, Injectable, computed, inject, signal } from '@angular/core'
 export type ColorSchemePreference = 'light' | 'dark';
 
 const STORAGE_KEY = 'color-scheme';
-const DARK_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 
 @Injectable({
   providedIn: 'root',
@@ -14,10 +13,9 @@ export class ThemeService {
   private readonly destroyRef = inject(DestroyRef);
 
   readonly storedScheme = signal<ColorSchemePreference | null>(this.readStoredScheme());
-  readonly systemScheme = signal<ColorSchemePreference>(this.readSystemScheme());
 
   readonly resolvedScheme = computed<ColorSchemePreference>(
-    () => this.storedScheme() ?? this.systemScheme()
+    () => this.storedScheme() ?? 'dark'
   );
   readonly isDark = computed(() => this.resolvedScheme() === 'dark');
   readonly toggleTooltip = computed(() =>
@@ -29,18 +27,6 @@ export class ThemeService {
 
     if (typeof window === 'undefined') {
       return;
-    }
-
-    if (typeof window.matchMedia === 'function') {
-      const mediaQuery = window.matchMedia(DARK_MEDIA_QUERY);
-      const handleMediaChange = (event: MediaQueryListEvent) => {
-        this.systemScheme.set(event.matches ? 'dark' : 'light');
-      };
-
-      mediaQuery.addEventListener('change', handleMediaChange);
-      this.destroyRef.onDestroy(() =>
-        mediaQuery.removeEventListener('change', handleMediaChange)
-      );
     }
 
     const handleStorage = (event: StorageEvent) => {
@@ -60,12 +46,10 @@ export class ThemeService {
   toggleTheme(): void {
     const target: ColorSchemePreference =
       this.resolvedScheme() === 'dark' ? 'light' : 'dark';
-    const nextStored: ColorSchemePreference | null =
-      target === this.systemScheme() ? null : target;
 
-    this.storedScheme.set(nextStored);
-    this.syncMetaTag(nextStored);
-    this.writeStoredScheme(nextStored);
+    this.storedScheme.set(target);
+    this.syncMetaTag(target);
+    this.writeStoredScheme(target);
   }
 
   private parseScheme(value: string | null): ColorSchemePreference | null {
@@ -98,17 +82,10 @@ export class ThemeService {
     }
   }
 
-  private readSystemScheme(): ColorSchemePreference {
-    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
-      return 'light';
-    }
-    return window.matchMedia(DARK_MEDIA_QUERY).matches ? 'dark' : 'light';
-  }
-
   private syncMetaTag(scheme: ColorSchemePreference | null): void {
     const meta = this.document.querySelector('meta[name="color-scheme"]');
     if (meta) {
-      meta.setAttribute('content', scheme ?? 'light dark');
+      meta.setAttribute('content', scheme ?? 'dark');
     }
   }
 }

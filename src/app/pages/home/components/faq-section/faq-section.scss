@@ -1,5 +1,6 @@
 .faq-helper-card {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-sm);
+  border-top: 2px solid var(--accent-secondary);
+  border-radius: 0px;
 }

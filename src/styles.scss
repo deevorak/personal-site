@@ -1,164 +1,15 @@
-@mixin dark-tokens {
-  --bg-canvas: var(--bg-canvas-dark);
-  --bg-surface: var(--bg-surface-dark);
-  --bg-subtle: var(--bg-subtle-dark);
-  --bg-elevated: var(--bg-elevated-dark);
-  --bg-header: var(--bg-header-dark);
-  --bg-header-scrolled: var(--bg-header-scrolled-dark);
-  --bg-brand-badge: var(--bg-brand-badge-dark);
-  --border-brand-badge: var(--border-brand-badge-dark);
-  --bg-tooltip: var(--bg-tooltip-dark);
-  --hero-gradient-start: var(--hero-gradient-start-dark);
-
-  --ink-primary: var(--ink-primary-dark);
-  --ink-secondary: var(--ink-secondary-dark);
-  --ink-muted: var(--ink-muted-dark);
-
-  --accent-primary: var(--accent-primary-dark);
-  --accent-primary-hover: var(--accent-primary-hover-dark);
-  --accent-primary-soft: var(--accent-primary-soft-dark);
-  --accent-primary-border: var(--accent-primary-border-dark);
-  --accent-primary-solid: var(--accent-primary-solid-dark);
-  --accent-primary-solid-hover: var(--accent-primary-solid-hover-dark);
-  --accent-primary-solid-active: var(--accent-primary-solid-active-dark);
-
-  --accent-whatsapp: var(--accent-whatsapp-dark);
-  --accent-whatsapp-hover: var(--accent-whatsapp-hover-dark);
-  --accent-whatsapp-soft: var(--accent-whatsapp-soft-dark);
-  --accent-whatsapp-text: var(--accent-whatsapp-text-dark);
-  --accent-whatsapp-border: var(--accent-whatsapp-border-dark);
-
-  --danger-text: var(--danger-text-dark);
-  --danger-soft: var(--danger-soft-dark);
-  --danger-solid: var(--danger-solid-dark);
-
-  --border-subtle: var(--border-subtle-dark);
-  --border-strong: var(--border-strong-dark);
-
-  --shadow-sm: var(--shadow-sm-dark);
-  --shadow-md: var(--shadow-md-dark);
-  --shadow-lg: var(--shadow-lg-dark);
-  --shadow-header: var(--shadow-header-dark);
-  --focus-ring-shadow: var(--focus-ring-shadow-dark);
-
-  --scrollbar-track: var(--scrollbar-track-dark);
-  --scrollbar-thumb: var(--scrollbar-thumb-dark);
-
-  --ink-icon-filter: brightness(0) invert(0.92);
-  --btn-close-filter: invert(1) grayscale(100%) brightness(200%);
-  --accordion-icon-filter: brightness(0) invert(0.9);
-  --form-select-chevron: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23cbd5e1' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-}
-
-:root {
-  color-scheme: light dark;
-  --color-scheme: light;
-
-  /* Paleta bruta — tema claro */
-  --bg-canvas-light: #f8fafc;
-  --bg-surface-light: #ffffff;
-  --bg-subtle-light: #eff4f8;
-  --bg-elevated-light: #f4f8fd;
-  --bg-header-light: rgba(248, 250, 252, 0.92);
-  --bg-header-scrolled-light: rgba(255, 255, 255, 0.96);
-  --bg-brand-badge-light: #0f233c;
-  --border-brand-badge-light: transparent;
-  --bg-tooltip-light: #0f172a;
-  --hero-gradient-start-light: #ffffff;
-
-  --ink-primary-light: #0f172a;
-  --ink-secondary-light: #334155;
-  --ink-muted-light: #526277;
-
-  --accent-primary-light: #0b5cab;
-  --accent-primary-hover-light: #094a8a;
-  --accent-primary-soft-light: #e8f1fb;
-  --accent-primary-border-light: rgba(11, 92, 171, 0.16);
-  --accent-primary-solid-light: #0b5cab;
-  --accent-primary-solid-hover-light: #094a8a;
-  --accent-primary-solid-active-light: #083d73;
-
-  --accent-whatsapp-light: #15803d;
-  --accent-whatsapp-hover-light: #166534;
-  --accent-whatsapp-soft-light: #eaf7ef;
-  --accent-whatsapp-text-light: #15803d;
-  --accent-whatsapp-border-light: rgba(21, 128, 61, 0.25);
-
-  --danger-text-light: #b91c1c;
-  --danger-soft-light: #fef2f2;
-  --danger-solid-light: #b91c1c;
-
-  --border-subtle-light: #e2e8f0;
-  --border-strong-light: #cbd5e1;
-
-  --shadow-sm-light: 0 1px 2px rgba(15, 23, 42, 0.05);
-  --shadow-md-light: 0 10px 28px -8px rgba(15, 35, 60, 0.09);
-  --shadow-lg-light: 0 18px 42px -12px rgba(15, 35, 60, 0.14);
-  --shadow-header-light: 0 6px 20px -10px rgba(15, 35, 60, 0.14);
-  --focus-ring-shadow-light: 0 0 0 4px rgba(11, 92, 171, 0.16);
-
-  --scrollbar-track-light: #eff4f8;
-  --scrollbar-thumb-light: #94a3b8;
-
-  /* Paleta bruta — tema escuro */
-  --bg-canvas-dark: #0b1220;
-  --bg-surface-dark: #121c2e;
-  --bg-subtle-dark: #162338;
-  --bg-elevated-dark: #192942;
-  --bg-header-dark: rgba(11, 18, 32, 0.9);
-  --bg-header-scrolled-dark: rgba(18, 28, 46, 0.95);
-  --bg-brand-badge-dark: #1e3a5f;
-  --border-brand-badge-dark: rgba(148, 163, 184, 0.24);
-  --bg-tooltip-dark: #1e293b;
-  --hero-gradient-start-dark: #0f1a2d;
-
-  --ink-primary-dark: #f1f5f9;
-  --ink-secondary-dark: #cbd5e1;
-  --ink-muted-dark: #94a3b8;
-
-  --accent-primary-dark: #60a5fa;
-  --accent-primary-hover-dark: #93c5fd;
-  --accent-primary-soft-dark: #172a45;
-  --accent-primary-border-dark: rgba(96, 165, 250, 0.28);
-  --accent-primary-solid-dark: #2563eb;
-  --accent-primary-solid-hover-dark: #1d4ed8;
-  --accent-primary-solid-active-dark: #1e40af;
-
-  --accent-whatsapp-dark: #15803d;
-  --accent-whatsapp-hover-dark: #166534;
-  --accent-whatsapp-soft-dark: #0f2e22;
-  --accent-whatsapp-text-dark: #4ade80;
-  --accent-whatsapp-border-dark: rgba(74, 222, 128, 0.3);
-
-  --danger-text-dark: #fca5a5;
-  --danger-soft-dark: #3b1219;
-  --danger-solid-dark: #dc2626;
-
-  --border-subtle-dark: #24344d;
-  --border-strong-dark: #5b6f8e;
-
-  --shadow-sm-dark: 0 1px 2px rgba(2, 6, 23, 0.35);
-  --shadow-md-dark: 0 12px 28px -8px rgba(2, 6, 23, 0.55);
-  --shadow-lg-dark: 0 20px 44px -12px rgba(2, 6, 23, 0.65);
-  --shadow-header-dark: 0 6px 20px -10px rgba(2, 6, 23, 0.6);
-  --focus-ring-shadow-dark: 0 0 0 4px rgba(96, 165, 250, 0.28);
-
-  --scrollbar-track-dark: #0f172a;
-  --scrollbar-thumb-dark: #64748b;
-
-  /* Tokens semânticos base (fallback tema claro) */
+@mixin light-tokens {
+  --bg-lowest: var(--bg-lowest-light);
   --bg-canvas: var(--bg-canvas-light);
   --bg-surface: var(--bg-surface-light);
   --bg-subtle: var(--bg-subtle-light);
+  --bg-card: var(--bg-card-light);
   --bg-elevated: var(--bg-elevated-light);
+  --bg-highest: var(--bg-highest-light);
+  --bg-input: var(--bg-input-light);
   --bg-header: var(--bg-header-light);
   --bg-header-scrolled: var(--bg-header-scrolled-light);
-  --bg-brand-badge: var(--bg-brand-badge-light);
-  --border-brand-badge: var(--border-brand-badge-light);
   --bg-tooltip: var(--bg-tooltip-light);
-  --hero-gradient-start: var(--hero-gradient-start-light);
-  --bg-navy: #0f233c;
-  --bg-navy-deep: #0b192c;
 
   --ink-primary: var(--ink-primary-light);
   --ink-secondary: var(--ink-secondary-light);
@@ -168,15 +19,15 @@
   --accent-primary-hover: var(--accent-primary-hover-light);
   --accent-primary-soft: var(--accent-primary-soft-light);
   --accent-primary-border: var(--accent-primary-border-light);
-  --accent-primary-solid: var(--accent-primary-solid-light);
-  --accent-primary-solid-hover: var(--accent-primary-solid-hover-light);
-  --accent-primary-solid-active: var(--accent-primary-solid-active-light);
+  --on-primary: var(--on-primary-light);
 
-  --accent-whatsapp: var(--accent-whatsapp-light);
-  --accent-whatsapp-hover: var(--accent-whatsapp-hover-light);
-  --accent-whatsapp-soft: var(--accent-whatsapp-soft-light);
-  --accent-whatsapp-text: var(--accent-whatsapp-text-light);
-  --accent-whatsapp-border: var(--accent-whatsapp-border-light);
+  --accent-secondary: var(--accent-secondary-light);
+  --accent-secondary-soft: var(--accent-secondary-soft-light);
+  --accent-secondary-border: var(--accent-secondary-border-light);
+  --on-secondary: var(--on-secondary-light);
+
+  --accent-tertiary: var(--accent-tertiary-light);
+  --accent-tertiary-text: var(--accent-tertiary-text-light);
 
   --danger-text: var(--danger-text-light);
   --danger-soft: var(--danger-soft-light);
@@ -184,11 +35,10 @@
 
   --border-subtle: var(--border-subtle-light);
   --border-strong: var(--border-strong-light);
+  --border-hover: var(--border-hover-light);
 
-  --shadow-sm: var(--shadow-sm-light);
-  --shadow-md: var(--shadow-md-light);
-  --shadow-lg: var(--shadow-lg-light);
-  --shadow-header: var(--shadow-header-light);
+  --glow-primary: var(--glow-primary-light);
+  --glow-primary-hover: var(--glow-primary-hover-light);
   --focus-ring-shadow: var(--focus-ring-shadow-light);
 
   --scrollbar-track: var(--scrollbar-track-light);
@@ -197,54 +47,193 @@
   --ink-icon-filter: none;
   --btn-close-filter: none;
   --accordion-icon-filter: none;
-  --form-select-chevron: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  --form-select-chevron: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23334155' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
 
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
+:root {
+  color-scheme: dark;
+  --color-scheme: dark;
 
-  /* Fallback para navegadores sem light-dark() quando o sistema está em modo escuro */
-  @media (prefers-color-scheme: dark) {
-    --color-scheme: dark;
+  /* Tipografia — DESIGN.md */
+  --font-display: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    &:not(:has(> head > meta[name='color-scheme'][content='light'])) {
-      @include dark-tokens;
-    }
-  }
+  /* Espaçamento e raios (0px estrito) — DESIGN.md */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
 
-  /* Reflete override manual do <meta name="color-scheme"> na propriedade CSS */
-  &:has(> head > meta[name='color-scheme'][content='dark']) {
-    color-scheme: dark;
-    --color-scheme: dark;
-    @include dark-tokens;
-  }
+  /* Paleta bruta — tema escuro (padrão DESIGN.md) */
+  --bg-lowest-dark: #060e1f;
+  --bg-canvas-dark: #0b1324;
+  --bg-surface-dark: #111b2e;
+  --bg-subtle-dark: #181f31;
+  --bg-card-dark: #1e293b;
+  --bg-elevated-dark: #222a3c;
+  --bg-highest-dark: #2d3547;
+  --bg-input-dark: #0d1526;
+  --bg-header-dark: rgba(11, 19, 36, 0.92);
+  --bg-header-scrolled-dark: rgba(6, 14, 31, 0.96);
+  --bg-tooltip-dark: #1e293b;
 
+  --ink-primary-dark: #f8fafc;
+  --ink-secondary-dark: #cbd5e1;
+  --ink-muted-dark: #94a3b8;
+
+  --accent-primary-dark: #38bdf8;
+  --accent-primary-hover-dark: #7bd0ff;
+  --accent-primary-soft-dark: rgba(56, 189, 248, 0.12);
+  --accent-primary-border-dark: rgba(56, 189, 248, 0.35);
+  --on-primary-dark: #0b1324;
+
+  --accent-secondary-dark: #2dd4bf;
+  --accent-secondary-soft-dark: rgba(45, 212, 191, 0.12);
+  --accent-secondary-border-dark: rgba(45, 212, 191, 0.4);
+  --on-secondary-dark: #003731;
+
+  --accent-tertiary-dark: #3b82f6;
+  --accent-tertiary-text-dark: #8cb1ff;
+
+  --danger-text-dark: #ffb4ab;
+  --danger-soft-dark: #3b1219;
+  --danger-solid-dark: #93000a;
+
+  --border-subtle-dark: #334155;
+  --border-strong-dark: #475569;
+  --border-hover-dark: rgba(56, 189, 248, 0.4);
+
+  --glow-primary-dark: 0 0 16px rgba(56, 189, 248, 0.15);
+  --glow-primary-hover-dark: 0 0 22px rgba(56, 189, 248, 0.28);
+  --focus-ring-shadow-dark: 0 0 0 1px #38bdf8;
+
+  --scrollbar-track-dark: #060e1f;
+  --scrollbar-thumb-dark: #475569;
+
+  /* Paleta bruta — tema claro (alternância opcional com contraste WCAG AA >= 4.5:1) */
+  --bg-lowest-light: #e2e8f0;
+  --bg-canvas-light: #f8fafc;
+  --bg-surface-light: #f1f5f9;
+  --bg-subtle-light: #eef2f6;
+  --bg-card-light: #ffffff;
+  --bg-elevated-light: #f1f5f9;
+  --bg-highest-light: #e2e8f0;
+  --bg-input-light: #ffffff;
+  --bg-header-light: rgba(248, 250, 252, 0.94);
+  --bg-header-scrolled-light: rgba(255, 255, 255, 0.97);
+  --bg-tooltip-light: #0f172a;
+
+  --ink-primary-light: #0f172a;
+  --ink-secondary-light: #334155;
+  --ink-muted-light: #475569;
+
+  --accent-primary-light: #0284c7;
+  --accent-primary-hover-light: #0369a1;
+  --accent-primary-soft-light: rgba(2, 132, 199, 0.1);
+  --accent-primary-border-light: rgba(2, 132, 199, 0.35);
+  --on-primary-light: #ffffff;
+
+  --accent-secondary-light: #0f766e;
+  --accent-secondary-soft-light: rgba(15, 118, 110, 0.1);
+  --accent-secondary-border-light: rgba(15, 118, 110, 0.35);
+  --on-secondary-light: #ffffff;
+
+  --accent-tertiary-light: #2563eb;
+  --accent-tertiary-text-light: #1d4ed8;
+
+  --danger-text-light: #b91c1c;
+  --danger-soft-light: #fef2f2;
+  --danger-solid-light: #b91c1c;
+
+  --border-subtle-light: #cbd5e1;
+  --border-strong-light: #94a3b8;
+  --border-hover-light: rgba(2, 132, 199, 0.45);
+
+  --glow-primary-light: 0 0 14px rgba(2, 132, 199, 0.18);
+  --glow-primary-hover-light: 0 0 20px rgba(2, 132, 199, 0.28);
+  --focus-ring-shadow-light: 0 0 0 1px #0284c7;
+
+  --scrollbar-track-light: #e2e8f0;
+  --scrollbar-thumb-light: #64748b;
+
+  /* Tokens semânticos base (padrão escuro DESIGN.md) */
+  --bg-lowest: var(--bg-lowest-dark);
+  --bg-canvas: var(--bg-canvas-dark);
+  --bg-surface: var(--bg-surface-dark);
+  --bg-subtle: var(--bg-subtle-dark);
+  --bg-card: var(--bg-card-dark);
+  --bg-elevated: var(--bg-elevated-dark);
+  --bg-highest: var(--bg-highest-dark);
+  --bg-input: var(--bg-input-dark);
+  --bg-header: var(--bg-header-dark);
+  --bg-header-scrolled: var(--bg-header-scrolled-dark);
+  --bg-tooltip: var(--bg-tooltip-dark);
+
+  --ink-primary: var(--ink-primary-dark);
+  --ink-secondary: var(--ink-secondary-dark);
+  --ink-muted: var(--ink-muted-dark);
+
+  --accent-primary: var(--accent-primary-dark);
+  --accent-primary-hover: var(--accent-primary-hover-dark);
+  --accent-primary-soft: var(--accent-primary-soft-dark);
+  --accent-primary-border: var(--accent-primary-border-dark);
+  --on-primary: var(--on-primary-dark);
+
+  --accent-secondary: var(--accent-secondary-dark);
+  --accent-secondary-soft: var(--accent-secondary-soft-dark);
+  --accent-secondary-border: var(--accent-secondary-border-dark);
+  --on-secondary: var(--on-secondary-dark);
+
+  --accent-tertiary: var(--accent-tertiary-dark);
+  --accent-tertiary-text: var(--accent-tertiary-text-dark);
+
+  --danger-text: var(--danger-text-dark);
+  --danger-soft: var(--danger-soft-dark);
+  --danger-solid: var(--danger-solid-dark);
+
+  --border-subtle: var(--border-subtle-dark);
+  --border-strong: var(--border-strong-dark);
+  --border-hover: var(--border-hover-dark);
+
+  --glow-primary: var(--glow-primary-dark);
+  --glow-primary-hover: var(--glow-primary-hover-dark);
+  --focus-ring-shadow: var(--focus-ring-shadow-dark);
+
+  --scrollbar-track: var(--scrollbar-track-dark);
+  --scrollbar-thumb: var(--scrollbar-thumb-dark);
+
+  --ink-icon-filter: brightness(0) invert(0.92);
+  --btn-close-filter: invert(1) grayscale(100%) brightness(200%);
+  --accordion-icon-filter: brightness(0) invert(0.9);
+  --form-select-chevron: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+
+  /* Override explícito via <meta name="color-scheme" content="light"> */
   &:has(> head > meta[name='color-scheme'][content='light']) {
     color-scheme: light;
     --color-scheme: light;
+    @include light-tokens;
   }
 
-  /* Tokens de cor nativos via light-dark() */
+  /* Tokens adaptativos nativos via light-dark() */
   @supports (color: light-dark(white, black)) {
+    --bg-lowest: light-dark(var(--bg-lowest-light), var(--bg-lowest-dark));
     --bg-canvas: light-dark(var(--bg-canvas-light), var(--bg-canvas-dark));
     --bg-surface: light-dark(var(--bg-surface-light), var(--bg-surface-dark));
     --bg-subtle: light-dark(var(--bg-subtle-light), var(--bg-subtle-dark));
+    --bg-card: light-dark(var(--bg-card-light), var(--bg-card-dark));
     --bg-elevated: light-dark(var(--bg-elevated-light), var(--bg-elevated-dark));
+    --bg-highest: light-dark(var(--bg-highest-light), var(--bg-highest-dark));
+    --bg-input: light-dark(var(--bg-input-light), var(--bg-input-dark));
     --bg-header: light-dark(var(--bg-header-light), var(--bg-header-dark));
     --bg-header-scrolled: light-dark(
       var(--bg-header-scrolled-light),
       var(--bg-header-scrolled-dark)
     );
-    --bg-brand-badge: light-dark(var(--bg-brand-badge-light), var(--bg-brand-badge-dark));
-    --border-brand-badge: light-dark(
-      var(--border-brand-badge-light),
-      var(--border-brand-badge-dark)
-    );
     --bg-tooltip: light-dark(var(--bg-tooltip-light), var(--bg-tooltip-dark));
-    --hero-gradient-start: light-dark(
-      var(--hero-gradient-start-light),
-      var(--hero-gradient-start-dark)
-    );
 
     --ink-primary: light-dark(var(--ink-primary-light), var(--ink-primary-dark));
     --ink-secondary: light-dark(var(--ink-secondary-light), var(--ink-secondary-dark));
@@ -263,35 +252,26 @@
       var(--accent-primary-border-light),
       var(--accent-primary-border-dark)
     );
-    --accent-primary-solid: light-dark(
-      var(--accent-primary-solid-light),
-      var(--accent-primary-solid-dark)
-    );
-    --accent-primary-solid-hover: light-dark(
-      var(--accent-primary-solid-hover-light),
-      var(--accent-primary-solid-hover-dark)
-    );
-    --accent-primary-solid-active: light-dark(
-      var(--accent-primary-solid-active-light),
-      var(--accent-primary-solid-active-dark)
-    );
+    --on-primary: light-dark(var(--on-primary-light), var(--on-primary-dark));
 
-    --accent-whatsapp: light-dark(var(--accent-whatsapp-light), var(--accent-whatsapp-dark));
-    --accent-whatsapp-hover: light-dark(
-      var(--accent-whatsapp-hover-light),
-      var(--accent-whatsapp-hover-dark)
+    --accent-secondary: light-dark(
+      var(--accent-secondary-light),
+      var(--accent-secondary-dark)
     );
-    --accent-whatsapp-soft: light-dark(
-      var(--accent-whatsapp-soft-light),
-      var(--accent-whatsapp-soft-dark)
+    --accent-secondary-soft: light-dark(
+      var(--accent-secondary-soft-light),
+      var(--accent-secondary-soft-dark)
     );
-    --accent-whatsapp-text: light-dark(
-      var(--accent-whatsapp-text-light),
-      var(--accent-whatsapp-text-dark)
+    --accent-secondary-border: light-dark(
+      var(--accent-secondary-border-light),
+      var(--accent-secondary-border-dark)
     );
-    --accent-whatsapp-border: light-dark(
-      var(--accent-whatsapp-border-light),
-      var(--accent-whatsapp-border-dark)
+    --on-secondary: light-dark(var(--on-secondary-light), var(--on-secondary-dark));
+
+    --accent-tertiary: light-dark(var(--accent-tertiary-light), var(--accent-tertiary-dark));
+    --accent-tertiary-text: light-dark(
+      var(--accent-tertiary-text-light),
+      var(--accent-tertiary-text-dark)
     );
 
     --danger-text: light-dark(var(--danger-text-light), var(--danger-text-dark));
@@ -300,6 +280,7 @@
 
     --border-subtle: light-dark(var(--border-subtle-light), var(--border-subtle-dark));
     --border-strong: light-dark(var(--border-strong-light), var(--border-strong-dark));
+    --border-hover: light-dark(var(--border-hover-light), var(--border-hover-dark));
 
     --scrollbar-track: light-dark(var(--scrollbar-track-light), var(--scrollbar-track-dark));
     --scrollbar-thumb: light-dark(var(--scrollbar-thumb-light), var(--scrollbar-thumb-dark));
@@ -309,42 +290,56 @@
   accent-color: var(--accent-primary);
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 
-  /* Ajustes dos tokens do Bootstrap 5.3 */
-  --bs-body-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* Sobrescrita de tokens do Bootstrap 5.3 — geometria 0px e tipografia técnica */
+  --bs-body-font-family: var(--font-mono);
   --bs-body-color: var(--ink-secondary);
   --bs-body-bg: var(--bg-canvas);
   --bs-primary: var(--accent-primary);
-  --bs-primary-rgb: 11, 92, 171;
+  --bs-primary-rgb: 56, 189, 248;
   --bs-border-color: var(--border-subtle);
   --bs-border-color-translucent: var(--border-subtle);
   --bs-link-color: var(--accent-primary);
   --bs-link-hover-color: var(--accent-primary-hover);
+  --bs-border-radius: 0px;
+  --bs-border-radius-sm: 0px;
+  --bs-border-radius-lg: 0px;
+  --bs-border-radius-xl: 0px;
+  --bs-border-radius-xxl: 0px;
+  --bs-border-radius-pill: 0px;
 }
 
-/* Visibilidade das opções do alternador de tema independente de JS */
-.theme-option-when-dark {
+/* Fallback legado de scrollbar sem conflitar com scrollbar-color padrão */
+@supports not (scrollbar-color: auto) {
+  :root::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  :root::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+  }
+
+  :root::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+}
+
+/* Visibilidade das opções do alternador de tema (padrão dark -> exibe opção tema claro) */
+.theme-option-when-light {
   display: none !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not(:has(> head > meta[name='color-scheme'][content='light'])) {
-    .theme-option-when-light {
-      display: none !important;
-    }
-
-    .theme-option-when-dark {
-      display: inline-flex !important;
-    }
-  }
+.theme-option-when-dark {
+  display: inline-flex !important;
 }
 
-:root:has(> head > meta[name='color-scheme'][content='dark']) {
+:root:has(> head > meta[name='color-scheme'][content='light']) {
   .theme-option-when-light {
-    display: none !important;
+    display: inline-flex !important;
   }
 
   .theme-option-when-dark {
-    display: inline-flex !important;
+    display: none !important;
   }
 }
 
@@ -360,10 +355,11 @@ html {
 }
 
 body {
-  font-family: var(--bs-body-font-family);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.571;
   color: var(--ink-secondary);
   background-color: var(--bg-canvas);
-  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
@@ -376,9 +372,9 @@ h4,
 h5,
 h6,
 .balanced-heading {
-  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-family: var(--font-display);
   color: var(--ink-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
@@ -389,7 +385,21 @@ li,
 }
 
 .font-mono-label {
-  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono);
+}
+
+/* Grade fluida e container 1280px — DESIGN.md */
+.container {
+  max-width: 1280px;
+  padding-inline: 1rem;
+
+  @media (min-width: 768px) {
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-inline: 2rem;
+  }
 }
 
 /* Mapeamento de utilitários e controles Bootstrap 5.3 para tokens de tema */
@@ -410,11 +420,7 @@ li,
 }
 
 .text-success {
-  color: var(--accent-whatsapp-text) !important;
-}
-
-.site-footer .text-success {
-  color: var(--accent-whatsapp-text-dark) !important;
+  color: var(--accent-secondary) !important;
 }
 
 .bg-primary-subtle {
@@ -422,22 +428,31 @@ li,
 }
 
 .bg-success-subtle {
-  background-color: var(--accent-whatsapp-soft) !important;
+  background-color: var(--accent-secondary-soft) !important;
 }
 
 .bg-dark-subtle {
-  background-color: var(--bg-subtle) !important;
+  background-color: var(--bg-surface) !important;
+}
+
+.border-top,
+.border-bottom {
+  border-color: var(--border-subtle) !important;
 }
 
 .border-success-subtle {
-  border-color: var(--accent-whatsapp-border) !important;
+  border-color: var(--accent-secondary-border) !important;
 }
 
+/* Campos de formulário — 0px, #0D1526, #334155, foco #38BDF8 */
 .form-control,
 .form-select {
-  background-color: var(--bg-canvas);
+  background-color: var(--bg-input);
   color: var(--ink-primary);
-  border-color: var(--border-strong);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
 }
 
 .form-control::placeholder {
@@ -447,7 +462,7 @@ li,
 
 .form-control:focus,
 .form-select:focus {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-input);
   color: var(--ink-primary);
   border-color: var(--accent-primary);
   box-shadow: var(--focus-ring-shadow);
@@ -457,10 +472,13 @@ li,
   --bs-form-select-bg-img: var(--form-select-chevron);
 }
 
+/* Modais */
 .modal-content {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-card);
   color: var(--ink-secondary);
-  border-color: var(--border-strong);
+  border: 1px solid var(--border-subtle);
+  border-top: 2px solid var(--accent-primary);
+  border-radius: 0px;
 }
 
 .modal-header,
@@ -469,10 +487,12 @@ li,
 }
 
 .modal-title {
+  font-family: var(--font-display);
   color: var(--ink-primary);
 }
 
 .btn-close {
+  border-radius: 0px;
   filter: var(--btn-close-filter);
 }
 
@@ -489,12 +509,12 @@ section[id],
 }
 
 .section-padding {
-  padding-block: 4.25rem;
+  padding-block: 4rem;
 }
 
 @media (min-width: 992px) {
   .section-padding {
-    padding-block: 5.75rem;
+    padding-block: 5.5rem;
   }
 }
 
@@ -510,48 +530,61 @@ section[id],
   background-color: var(--bg-subtle);
 }
 
-.section-navy {
-  background-color: var(--bg-navy);
-  color: #f8fafc;
+.section-lowest {
+  background-color: var(--bg-lowest-dark);
+  color: #cbd5e1;
 
   h1,
   h2,
   h3,
   h4 {
-    color: #ffffff;
+    color: #f8fafc;
   }
 }
 
+/* Eyebrow / Tag retangular 0px com label-sm uppercase */
 .section-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.375rem 0.875rem;
-  border-radius: 999px;
-  font-size: 0.8125rem;
-  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 0px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--accent-primary);
   background-color: var(--accent-primary-soft);
   border: 1px solid var(--accent-primary-border);
 }
 
 .section-title {
-  font-size: clamp(1.75rem, 2.8vw, 2.35rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
 }
 
 .section-lead {
-  font-size: 1.0625rem;
-  line-height: 1.7;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.625;
   color: var(--ink-secondary);
-  max-width: 64ch;
+  max-width: 66ch;
 }
 
-/* Botões orientados à conversão e contraste acessível */
+/* Botões — 0px, JetBrains Mono uppercase label-lg */
 .btn {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
   font-weight: 600;
-  border-radius: var(--radius-sm);
+  line-height: 1.25rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 0px;
   transition:
     background-color 0.18s ease,
     border-color 0.18s ease,
@@ -560,7 +593,19 @@ section[id],
     transform 0.18s ease;
 }
 
+.btn-sm {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.btn-lg {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .btn-link {
+  text-transform: none;
+  letter-spacing: 0;
   --bs-btn-color: var(--accent-primary);
   --bs-btn-hover-color: var(--accent-primary-hover);
   --bs-btn-active-color: var(--accent-primary-hover);
@@ -577,41 +622,46 @@ input:focus-visible {
   box-shadow: var(--focus-ring-shadow);
 }
 
-.btn-whatsapp {
-  --bs-btn-color: #ffffff;
-  --bs-btn-bg: var(--accent-whatsapp);
-  --bs-btn-border-color: var(--accent-whatsapp);
-  --bs-btn-hover-color: #ffffff;
-  --bs-btn-hover-bg: var(--accent-whatsapp-hover);
-  --bs-btn-hover-border-color: var(--accent-whatsapp-hover);
-  --bs-btn-active-color: #ffffff;
-  --bs-btn-active-bg: #14532d;
-  --bs-btn-active-border-color: #14532d;
-  --bs-btn-focus-shadow-rgb: 21, 128, 61;
-  box-shadow: 0 6px 18px -6px rgba(21, 128, 61, 0.45);
-}
-
-.btn-whatsapp:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 22px -8px rgba(21, 128, 61, 0.55);
-}
-
+/* Primary CTA — #38BDF8 fill + #0B1324 text + luminous glow */
+.btn-whatsapp,
 .btn-brand {
-  --bs-btn-color: #ffffff;
-  --bs-btn-bg: var(--accent-primary-solid);
-  --bs-btn-border-color: var(--accent-primary-solid);
-  --bs-btn-hover-color: #ffffff;
-  --bs-btn-hover-bg: var(--accent-primary-solid-hover);
-  --bs-btn-hover-border-color: var(--accent-primary-solid-hover);
-  --bs-btn-active-color: #ffffff;
-  --bs-btn-active-bg: var(--accent-primary-solid-active);
-  --bs-btn-active-border-color: var(--accent-primary-solid-active);
+  --bs-btn-color: var(--on-primary);
+  --bs-btn-bg: var(--accent-primary);
+  --bs-btn-border-color: var(--accent-primary);
+  --bs-btn-hover-color: var(--on-primary);
+  --bs-btn-hover-bg: var(--accent-primary-hover);
+  --bs-btn-hover-border-color: var(--accent-primary-hover);
+  --bs-btn-active-color: var(--on-primary);
+  --bs-btn-active-bg: var(--accent-primary-hover);
+  --bs-btn-active-border-color: var(--accent-primary-hover);
+  --bs-btn-focus-shadow-rgb: 56, 189, 248;
+  box-shadow: var(--glow-primary);
 }
 
+.btn-whatsapp:hover,
+.btn-brand:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--glow-primary-hover);
+}
+
+/* Secondary CTA — transparente com borda 1px #38BDF8 e texto #38BDF8 */
 .btn-outline-slate {
-  --bs-btn-color: var(--ink-primary);
-  --bs-btn-bg: var(--bg-surface);
-  --bs-btn-border-color: var(--border-strong);
+  --bs-btn-color: var(--accent-primary);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--accent-primary);
+  --bs-btn-hover-color: var(--accent-primary-hover);
+  --bs-btn-hover-bg: var(--accent-primary-soft);
+  --bs-btn-hover-border-color: var(--accent-primary-hover);
+  --bs-btn-active-color: var(--accent-primary-hover);
+  --bs-btn-active-bg: var(--accent-primary-soft);
+  --bs-btn-active-border-color: var(--accent-primary);
+}
+
+/* Botão utilitário neutro com borda estrutural #334155 */
+.btn-outline-tech-neutral {
+  --bs-btn-color: var(--ink-secondary);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--border-subtle);
   --bs-btn-hover-color: var(--accent-primary);
   --bs-btn-hover-bg: var(--accent-primary-soft);
   --bs-btn-hover-border-color: var(--accent-primary);
@@ -619,7 +669,7 @@ input:focus-visible {
   --bs-btn-active-bg: var(--accent-primary-soft);
 }
 
-/* Padrão copy-button acessível (feedback fora do botão, controlado por opacity) */
+/* Padrão copy-button acessível */
 .copy-action-wrapper {
   position: relative;
   display: inline-flex;
@@ -632,15 +682,15 @@ input:focus-visible {
 }
 
 .copy-btn[data-copied='true'] {
-  border-color: var(--accent-whatsapp-text);
-  color: var(--accent-whatsapp-text);
-  background-color: var(--accent-whatsapp-soft);
+  border-color: var(--accent-secondary) !important;
+  color: var(--accent-secondary) !important;
+  background-color: var(--accent-secondary-soft) !important;
 }
 
 .copy-btn[data-failed='true'] {
-  border-color: var(--danger-text);
-  color: var(--danger-text);
-  background-color: var(--danger-soft);
+  border-color: var(--danger-text) !important;
+  color: var(--danger-text) !important;
+  background-color: var(--danger-soft) !important;
 }
 
 .copy-feedback-bubble {
@@ -649,13 +699,14 @@ input:focus-visible {
   inset-inline-start: 50%;
   transform: translateX(-50%);
   padding: 0.25rem 0.625rem;
-  border-radius: 0.375rem;
+  border-radius: 0px;
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
   white-space: nowrap;
-  color: #ffffff;
+  color: var(--ink-primary-dark);
   background-color: var(--bg-tooltip);
-  box-shadow: var(--shadow-sm);
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.16s ease;
@@ -667,29 +718,40 @@ input:focus-visible {
 }
 
 .copy-feedback-bubble[data-state='copied'] {
-  background-color: var(--accent-whatsapp);
+  color: var(--on-secondary-dark);
+  background-color: var(--accent-secondary-dark);
+  border-color: var(--accent-secondary-dark);
 }
 
 .copy-feedback-bubble[data-state='failed'] {
+  color: #ffffff;
   background-color: var(--danger-solid);
+  border-color: var(--danger-text);
 }
 
-/* Accordion Bootstrap personalizado */
+/* Accordion Bootstrap personalizado — 0px, #1E293B, borda 1px #334155 */
 .faq-accordion .accordion-item {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
+  border-top: 2px solid var(--border-subtle);
+  border-radius: 0px;
   margin-bottom: 0.875rem;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
+
+  &:has(.accordion-button:not(.collapsed)) {
+    border-top-color: var(--accent-primary);
+  }
 }
 
 .faq-accordion .accordion-button {
-  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.035rem;
+  font-size: 1rem;
+  line-height: 1.5;
   color: var(--ink-primary);
-  background-color: var(--bg-surface);
+  background-color: var(--bg-card);
+  border-radius: 0px;
   padding: 1.25rem 1.375rem;
   box-shadow: none;
   text-align: start;
@@ -706,19 +768,37 @@ input:focus-visible {
 }
 
 .faq-accordion .accordion-body {
+  font-family: var(--font-mono);
   padding: 1.25rem 1.375rem;
   color: var(--ink-secondary);
-  line-height: 1.7;
-  font-size: 0.975rem;
+  line-height: 1.65;
+  font-size: 0.875rem;
 }
 
 @media (forced-colors: active) {
-  .brand-monogram,
   .step-number,
   .section-eyebrow,
   .hero-badge,
-  .copy-feedback-bubble {
+  .panel-status-pill,
+  .solution-badge,
+  .segment-chip,
+  .tech-pillar-badge,
+  .stack-tag,
+  .copy-feedback-bubble,
+  .solution-card,
+  .diff-card,
+  .tech-pillar-card,
+  .step-card,
+  .consultive-box,
+  .faq-helper-card,
+  .email-contact-card,
+  .whatsapp-composer-card,
+  .btn {
     border: 1px solid CanvasText;
+  }
+
+  .hero-section {
+    background-image: none;
   }
 
   .topic-pill.is-selected {
@@ -734,7 +814,8 @@ input:focus-visible {
     animation-duration: 0.01ms !important;
   }
 
-  .btn-whatsapp:hover {
+  .btn-whatsapp:hover,
+  .btn-brand:hover {
     transform: none;
   }
 }

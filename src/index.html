@@ -2,47 +2,58 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <title>Carlos Rocha | Agentes de IA, Automação e Sistemas sob Medida</title>
+    <title>Carlos Rocha Consultoria em TI | Agentes de IA, Automação e Software sob Medida</title>
     <base href="./" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Carlos Rocha — Analista de TI e Desenvolvedor de Software autônomo (pessoa física) com mais de 20 anos de experiência corporativa e atuação em sistemas de atendimento ao cidadão. Agentes de IA, sites corporativos, automação de processos e sistemas sob medida para pequenas e médias empresas."
+      content="Carlos Rocha Consultoria em TI — Analista de TI e Desenvolvedor de Software autônomo (pessoa física) com mais de 20 anos de experiência corporativa e atuação em sistemas de atendimento ao cidadão. Agentes de IA, sites corporativos, automação de processos e sistemas sob medida para pequenas e médias empresas."
     />
     <meta
       name="keywords"
-      content="Carlos Rocha, agentes de IA para atendimento, automação de processos, sites corporativos, sistemas sob medida, Java 25, Spring Boot, Keycloak, PostgreSQL pgvector, Redis, Kafka, n8n, Docker, Kubernetes, Cloudflare R2, VPS"
+      content="Carlos Rocha Consultoria em TI, agentes de IA para atendimento, automação de processos, sites corporativos, sistemas sob medida, Java 25, Spring Boot, Keycloak, PostgreSQL pgvector, Redis, Kafka, n8n, Docker, Kubernetes, Cloudflare R2, VPS"
     />
     <meta name="author" content="Carlos Rocha" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="dark" />
     <script>
       try {
+        var storedScheme = localStorage.getItem('color-scheme');
         document.querySelector('meta[name="color-scheme"]').content =
-          localStorage.getItem('color-scheme') ?? 'light dark';
+          storedScheme === 'light' || storedScheme === 'dark' ? storedScheme : 'dark';
       } catch {}
     </script>
-    <meta name="theme-color" content="#0f233c" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0b1320" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#0b1324" />
+    <meta name="theme-color" content="#0b1324" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta
       property="og:title"
-      content="Carlos Rocha | Soluções em IA, Automação e Software"
+      content="Carlos Rocha Consultoria em TI | Agentes de IA, Automação e Software sob Medida"
     />
     <meta
       property="og:description"
       content="Mais de 20 anos de experiência corporativa e vivência em atendimento ao cidadão aplicados a agentes de IA, sites corporativos, automação e sistemas sob medida para pequenas e médias empresas."
     />
+    <meta property="og:image" content="brand/og-banner.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <link rel="icon" href="favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/icon-72x72.png" />
+    <link rel="manifest" href="site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -78,7 +89,7 @@
           },
           {
             "@type": "ProfessionalService",
-            "name": "Carlos Rocha — Desenvolvimento e Automação",
+            "name": "Carlos Rocha Consultoria em TI",
             "description": "Soluções digitais para pequenas e médias empresas de qualquer segmento: agentes de IA para atendimento, sites corporativos, automação de processos e sistemas completos sob medida.",
             "areaServed": "BR",
             "telephone": "+55-51-99242-9952",
