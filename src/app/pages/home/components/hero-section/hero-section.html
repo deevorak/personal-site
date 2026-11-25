@@ -8,7 +8,7 @@
         </div>
 
         <h1 class="hero-title mb-3">
-          Atendimento ágil, presença digital e processos organizados com IA e software sob medida
+          Atendimento ágil, presença digital, otimização de processos e software sob medida
         </h1>
 
         <p class="hero-subtitle mb-4">
@@ -20,40 +20,29 @@
         </p>
 
         <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-3 mb-3">
-          <a
-            class="btn btn-whatsapp btn-lg px-4 py-3 d-inline-flex align-items-center justify-content-center gap-2"
-            [href]="contactService.whatsappUrl()"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="btn btn-whatsapp btn-lg px-4 py-3 d-inline-flex align-items-center justify-content-center gap-2"
+            [href]="contactService.whatsappUrl()" target="_blank" rel="noopener noreferrer">
             <i class="bi bi-whatsapp fs-5" aria-hidden="true"></i>
             <span>Conversar no WhatsApp</span>
           </a>
 
-          <a
-            class="btn btn-outline-slate btn-lg px-4 py-3 d-inline-flex align-items-center justify-content-center gap-2"
-            href="#solucoes"
-            (click)="scrollToSolutions($event)"
-          >
+          <a class="btn btn-outline-slate btn-lg px-4 py-3 d-inline-flex align-items-center justify-content-center gap-2"
+            href="#solucoes" (click)="scrollToSolutions($event)">
             <span>Conhecer as soluções</span>
             <i class="bi bi-arrow-down-short fs-5" aria-hidden="true"></i>
           </a>
         </div>
 
         <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
-          <button
-            type="button"
+          <button type="button"
             class="btn btn-link p-0 text-decoration-none text-start small fw-semibold d-inline-flex align-items-center gap-2"
-            (click)="openCustomWhatsAppModal()"
-          >
+            (click)="openCustomWhatsAppModal()">
             <i class="bi bi-sliders flex-shrink-0" aria-hidden="true"></i>
             <span>Personalizar mensagem do WhatsApp</span>
           </button>
           <span class="text-muted small d-none d-sm-inline" aria-hidden="true">•</span>
-          <a
-            class="small text-decoration-none fw-medium text-secondary d-inline-flex align-items-center gap-1"
-            [href]="contactService.emailHref"
-          >
+          <a class="small text-decoration-none fw-medium text-secondary d-inline-flex align-items-center gap-1"
+            [href]="contactService.emailHref">
             <i class="bi bi-envelope" aria-hidden="true"></i>
             <span>{{ contactService.email }}</span>
           </a>
