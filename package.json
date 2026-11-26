@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:gh-pages": "ng build --configuration production",
-    "deploy": "ng deploy --base-href=/personal-site/",
+    "deploy": "ng deploy --base-href=/ --cname=rocha-consultoria.tech --no-notfound",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -19,7 +19,9 @@
     "@angular/forms": "^22.3.0",
     "@angular/localize": "^22.0.0",
     "@angular/platform-browser": "^22.3.0",
+    "@angular/platform-server": "^22.3.0",
     "@angular/router": "^22.3.0",
+    "@angular/ssr": "^22.3.0",
     "@ng-bootstrap/ng-bootstrap": "^21.0.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.9",

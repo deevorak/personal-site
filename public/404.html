@@ -2,23 +2,76 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <title>Redirecionando...</title>
-    <meta name="robots" content="noindex" />
-    <script>
-      // Redireciona rotas diretas no GitHub Pages mantendo compatibilidade com roteamento hash
-      (function () {
-        var pathSegmentsToKeep = 1;
-        var l = window.location;
-        var basePath = l.pathname
-          .split('/')
-          .slice(0, 1 + pathSegmentsToKeep)
-          .join('/');
-        var redirectTarget = l.origin + basePath + '/#/';
-        l.replace(redirectTarget);
-      })();
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página não encontrada | Carlos Rocha Consultoria em TI</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 1.5rem;
+        background-color: #0b1324;
+        color: #cbd5e1;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+      main {
+        max-width: 34rem;
+        padding: 2rem;
+        background-color: #111b2e;
+        border: 1px solid #334155;
+        border-top: 2px solid #38bdf8;
+      }
+      .code {
+        display: inline-block;
+        margin-bottom: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #38bdf8;
+        background-color: rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(56, 189, 248, 0.35);
+      }
+      h1 {
+        margin: 0 0 0.75rem;
+        font-family: system-ui, -apple-system, sans-serif;
+        font-size: 1.5rem;
+        color: #f8fafc;
+      }
+      p {
+        margin: 0 0 1.5rem;
+        line-height: 1.6;
+      }
+      a {
+        display: inline-block;
+        padding: 0.75rem 1.25rem;
+        background-color: #38bdf8;
+        color: #0b1324;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-size: 0.875rem;
+      }
+      a:hover {
+        background-color: #7bd0ff;
+      }
+    </style>
   </head>
   <body>
-    <p>Redirecionando para a página inicial...</p>
+    <main>
+      <span class="code">Erro 404</span>
+      <h1>Página não encontrada</h1>
+      <p>
+        O endereço acessado não existe ou foi movido. Você pode retornar para a página inicial da
+        Carlos Rocha Consultoria em TI.
+      </p>
+      <a href="/">Ir para a página inicial</a>
+    </main>
   </body>
 </html>

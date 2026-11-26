@@ -31,7 +31,7 @@
       </div>
 
       <div class="col-lg-8">
-        <div ngbAccordion [closeOthers]="true" class="faq-accordion">
+        <div ngbAccordion [closeOthers]="true" [destroyOnHide]="false" class="faq-accordion">
           @for (item of faqs; track item.id; let idx = $index) {
             <div ngbAccordionItem [collapsed]="idx !== 0">
               <h3 ngbAccordionHeader>

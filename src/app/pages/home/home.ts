@@ -28,22 +28,15 @@ export class Home {
   private readonly meta = inject(Meta);
 
   constructor() {
-    this.title.setTitle(
-      'Carlos Rocha Consultoria em TI | Agentes de IA, Automação e Software sob Medida'
-    );
-    this.meta.updateTag({
-      name: 'description',
-      content:
-        'Carlos Rocha Consultoria em TI — Analista de TI e Desenvolvedor de Software autônomo (pessoa física, sem CNPJ) com +20 anos de experiência corporativa e atuação em sistemas de atendimento ao cidadão. Agentes de IA, sites corporativos, automação e sistemas sob medida.',
-    });
-    this.meta.updateTag({
-      property: 'og:title',
-      content: 'Carlos Rocha Consultoria em TI | Agentes de IA, Automação e Software sob Medida',
-    });
-    this.meta.updateTag({
-      property: 'og:description',
-      content:
-        'Soluções em agentes de IA para atendimento, sites corporativos, automação de processos e sistemas sob medida para pequenas e médias empresas de qualquer segmento.',
-    });
+    const pageTitle = 'Consultoria em TI, Agentes de IA e Automação | Carlos Rocha';
+    const pageDescription =
+      'Agentes de IA, automação de processos, sites corporativos e sistemas sob medida para PMEs. +20 anos em TI corporativa com atendimento direto. Fale no WhatsApp.';
+
+    this.title.setTitle(pageTitle);
+    this.meta.updateTag({ name: 'description', content: pageDescription });
+    this.meta.updateTag({ property: 'og:title', content: pageTitle });
+    this.meta.updateTag({ property: 'og:description', content: pageDescription });
+    this.meta.updateTag({ name: 'twitter:title', content: pageTitle });
+    this.meta.updateTag({ name: 'twitter:description', content: pageDescription });
   }
 }
